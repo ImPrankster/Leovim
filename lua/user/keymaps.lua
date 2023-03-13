@@ -49,6 +49,9 @@ keymap("v", "p", '"_dP', opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
+keymap("i", "<C-h>", "<ESC>", opts)
+keymap("i", "<C-l>", "<ESC>", opts)
+keymap("i", "<C-z>", "<ESC>:u<CR>i", opts)
 
 -- Visual --
 -- Stay in indent mode
