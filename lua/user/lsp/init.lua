@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 require "user.lsp.mason"
+require "user.lsp.null-ls"
 require("mason-lspconfig").setup_handlers {
   -- The first entry (without a key) will be the default handler
   -- and will be called for each installed server that doesn't have
