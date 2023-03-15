@@ -69,6 +69,7 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+-- keymap("n", "<leader>fn", ":Telescope noice<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -104,7 +105,3 @@ keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", o
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-
--- Hop
-keymap("n", "s", ":HopChar2<cr>", opts)
-keymap("n", "S", ":HopWord<cr>", opts)
