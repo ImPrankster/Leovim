@@ -60,6 +60,15 @@ return packer.startup(function(use)
   use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
 
   -- My plugins here
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = {
+      { "nvim-tree/nvim-web-devicons" },
+      --Please make sure you install markdown and markdown_inline parser
+      { "nvim-treesitter/nvim-treesitter" }
+    }
+  }) -- use { "ray-x/lsp_signature.nvim" }
   use "folke/which-key.nvim"
   use "karb94/neoscroll.nvim"
   use {
@@ -73,10 +82,6 @@ return packer.startup(function(use)
   --     "rcarriga/nvim-notify",
   --   },
   -- }
-  use {
-    "ggandor/leap.nvim",
-    requires = "tpope/vim-repeat",
-  }
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -105,6 +110,14 @@ return packer.startup(function(use)
   }
   use { "kylechui/nvim-surround", tag = "*" }
   use "windwp/nvim-ts-autotag"
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require 'hop'.setup { keys = 'abcdefghijklmnopqrstuvw' }
+    end
+  }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
