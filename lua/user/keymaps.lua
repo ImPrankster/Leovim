@@ -67,7 +67,8 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>t", ":TroubleToggle<CR>", opts)
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":Neotree toggle filesystem left<cr>", opts)
+keymap("n", "<leader>b", ":Neotree toggle filesystem float<cr>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
@@ -137,14 +138,6 @@ keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
--- Diagnostic jump with filters such as only jumping to an error
-keymap("n", "[E", function()
-  require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-end)
-keymap("n", "]E", function()
-  require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-end)
-
 -- Toggle outline
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 
@@ -161,7 +154,8 @@ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 -- Note that if you use hover with ++keep, pressing this key again will
 -- close the hover window. If you want to jump to the hover window
 -- you should use the wincmd command "<C-w>w"
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+keymap("n", "K", "<cmd>Lspsaga hover_doc ++quiet<CR>", opts)
+keymap("n", "J", "<cmd>Lspsaga hover_doc ++keep ++quiet<CR>", opts)
 
 -- Call hierarchy
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")

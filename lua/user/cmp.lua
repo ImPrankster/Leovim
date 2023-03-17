@@ -117,6 +117,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = 'nvim_lsp_signature_help' },
     { name = "copilot" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },

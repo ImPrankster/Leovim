@@ -1,4 +1,7 @@
 require("lspsaga").setup({
+  lightbulb = {
+    enable = false,
+  },
   ui = {
     -- This option only works in Neovim 0.9
     title = true,
