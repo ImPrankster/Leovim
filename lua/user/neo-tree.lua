@@ -1,4 +1,5 @@
 require("neo-tree").setup({
+  popup_border_style = "rounded",
   filesystem = {
     window = {
       width = 30,
@@ -31,13 +32,15 @@ require("neo-tree").setup({
     },
     git_status = {
       symbols = {
-        unstaged = "",
-        staged = "",
-        unmerged = "",
-        renamed = "➜",
+        added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+        modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
+        unstaged  = "",
+        staged    = "",
+        unmerged  = "",
+        renamed   = "➜",
         untracked = "+",
-        deleted = "-",
-        ignored = "◌",
+        deleted   = "-",
+        ignored   = "◌",
       }
     },
   },
