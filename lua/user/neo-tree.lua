@@ -6,6 +6,7 @@ require("neo-tree").setup({
       mappings = {
         ["l"] = "open",
         ["o"] = "system_open",
+        ["f"] = "noop",
       },
     },
     commands = {
