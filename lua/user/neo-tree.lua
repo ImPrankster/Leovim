@@ -5,8 +5,10 @@ require("neo-tree").setup({
       width = 30,
       mappings = {
         ["l"] = "open",
+        ["h"] = "toggle_node",
         ["o"] = "system_open",
         ["f"] = "noop",
+        ["<space>"] = "noop",
       },
     },
     commands = {

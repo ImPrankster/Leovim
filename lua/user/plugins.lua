@@ -41,7 +41,6 @@ packer.init {
   },
 }
 
--- Install your plugins here
 return packer.startup(function(use)
   use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
   use { "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" }  -- Useful lua functions used by lots of plugins
@@ -57,7 +56,7 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
   use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
 
-  -- My plugins here
+  -- Leo's choice
   use { "nvim-tree/nvim-web-devicons" }
   use {
     "nvim-neo-tree/neo-tree.nvim",
@@ -78,28 +77,20 @@ return packer.startup(function(use)
     }
   })
   use "hrsh7th/cmp-nvim-lsp-signature-help"
-  use {
-    'rmagatti/auto-session',
-    config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-      }
-    end
-  }
   use "folke/which-key.nvim"
   use "karb94/neoscroll.nvim"
   use {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
   }
-  -- use {
-  --   "folke/noice.nvim",
-  --   requires = {
-  --     "MunifTanjim/nui.nvim",
-  --     "rcarriga/nvim-notify",
-  --   },
-  -- }
+  use {
+    "folke/noice.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  }
+  use 'NvChad/nvim-colorizer.lua'
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -127,7 +118,7 @@ return packer.startup(function(use)
     after = { "copilot.lua" },
   }
   use { "kylechui/nvim-surround", tag = "*" }
-  use "windwp/nvim-ts-autotag"
+  use { "windwp/nvim-ts-autotag" }
   use {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
@@ -136,12 +127,24 @@ return packer.startup(function(use)
       require 'hop'.setup { keys = 'abcdefghijklmnopqrstuvw' }
     end
   }
+  use {
+    "nacro90/numb.nvim",
+    event = "BufRead",
+    config = function()
+      require("numb").setup {
+        show_numbers = true,    -- Enable 'number' for the window while peeking
+        show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+      }
+    end,
+  }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
   use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
   use { "tanvirtin/monokai.nvim" }
   use { "Mofiqul/dracula.nvim" }
+  use { "sainnhe/sonokai" }
+  use { "shaunsingh/nord.nvim" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" }         -- The completion plugin
