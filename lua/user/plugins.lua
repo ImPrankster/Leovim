@@ -83,13 +83,6 @@ return packer.startup(function(use)
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
   }
-  use {
-    "folke/noice.nvim",
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-  }
   use 'NvChad/nvim-colorizer.lua'
   use {
     "zbirenbaum/copilot.lua",
@@ -145,6 +138,8 @@ return packer.startup(function(use)
   use { "Mofiqul/dracula.nvim" }
   use { "sainnhe/sonokai" }
   use { "shaunsingh/nord.nvim" }
+  use { "wuelnerdotexe/vim-enfocado" }
+  use { "vv9k/bogster" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" }         -- The completion plugin

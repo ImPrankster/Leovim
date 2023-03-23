@@ -23,6 +23,11 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>q", "<C-w>q", opts)
 
+-- Shortcut like helix
+keymap("n", "gl", "$", opts)
+keymap("n", "gh", "0", opts)
+keymap("n", "U", "<C-r>", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -32,11 +37,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Hop
-keymap("n", "s", ":HopChar2<CR>", opts)
-keymap("n", "S", ":HopChar1<CR>", opts)
-
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -64,18 +64,23 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Plugins --
+
+-- TroubleToggle
 keymap("n", "<leader>t", ":TroubleToggle<CR>", opts)
 
 -- NvimTree
 keymap("n", "<leader>e", ":Neotree toggle filesystem left<cr>", opts)
 keymap("n", "<leader>b", ":Neotree toggle filesystem float<cr>", opts)
 
+-- Hop
+keymap("n", "s", ":HopChar2<CR>", opts)
+keymap("n", "S", ":HopChar1<CR>", opts)
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
--- keymap("n", "<leader>fn", ":Telescope noice<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -99,39 +104,39 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- If there is no definition, it will instead be hidden
 -- When you use an action in finder like "open vsplit",
 -- you can use <C-t> to jump back
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+keymap("n", "<leader>lh", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
-keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap({ "n", "v" }, "<leader>lc", "<cmd>Lspsaga code_action<CR>")
 
 -- Rename all occurrences of the hovered word for the selected files
-keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
+keymap("n", "<leader>lr", "<cmd>Lspsaga rename ++project<CR>")
 
 -- Peek definition
 -- You can edit the file containing the definition in the floating window
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
+keymap("n", "<leader>ll", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-keymap("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
+keymap("n", "<leader>lt", "<cmd>Lspsaga peek_type_definition<CR>")
 
 -- Show line diagnostics
 -- You can pass argument ++unfocus to
 -- unfocus the show_line_diagnostics floating window
-keymap("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
+keymap("n", "<leader>le", "<cmd>Lspsaga show_line_diagnostics<CR>")
 
 -- Show cursor diagnostics
 -- Like show_line_diagnostics, it supports passing the ++unfocus argument
-keymap("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+keymap("n", "<leader>lp", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
 
 -- Show buffer diagnostics
-keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+keymap("n", "<leader>lE", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
 -- Diagnostic jump
 -- You can use <C-o> to jump back to your previous location
@@ -139,24 +144,12 @@ keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 -- Toggle outline
-keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
+keymap("n", "<leader>lo", "<cmd>Lspsaga outline<CR>")
 
 -- Hover Doc
--- If there is no hover doc,
--- there will be a notification stating that
--- there is no information available.
--- To disable it just use ":Lspsaga hover_doc ++quiet"
--- Pressing the key twice will enter the hover window
--- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
-
--- If you want to keep the hover window in the top right hand corner,
--- you can pass the ++keep argument
--- Note that if you use hover with ++keep, pressing this key again will
--- close the hover window. If you want to jump to the hover window
--- you should use the wincmd command "<C-w>w"
 keymap("n", "K", "<cmd>Lspsaga hover_doc ++quiet<CR>", opts)
 keymap("n", "J", "<cmd>Lspsaga hover_doc ++keep ++quiet<CR>", opts)
 
 -- Call hierarchy
-keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
-keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+keymap("n", "<Leader>l>", "<cmd>Lspsaga incoming_calls<CR>")
+keymap("n", "<Leader>l<", "<cmd>Lspsaga outgoing_calls<CR>")
