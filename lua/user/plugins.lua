@@ -84,6 +84,7 @@ return packer.startup(function(use)
     requires = "nvim-tree/nvim-web-devicons",
   }
   use 'NvChad/nvim-colorizer.lua'
+  use { 'michaelb/sniprun', run = 'bash ./install.sh' }
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",

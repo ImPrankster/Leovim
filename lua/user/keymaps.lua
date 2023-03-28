@@ -25,7 +25,7 @@ keymap("n", "<leader>q", "<C-w>q", opts)
 
 -- Shortcut like helix
 keymap("n", "gl", "$", opts)
-keymap("n", "gh", "0", opts)
+keymap("n", "gh", "^", opts)
 keymap("n", "U", "<C-r>", opts)
 
 -- Resize with arrows
@@ -49,6 +49,11 @@ keymap("n", "<C-s>", "<cmd>w<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
+
+-- Change Record mapping
+-- Disable
+keymap("n", "+", "q", opts)
+keymap("n", "q", "<Nop>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -153,3 +158,10 @@ keymap("n", "J", "<cmd>Lspsaga hover_doc ++keep ++quiet<CR>", opts)
 -- Call hierarchy
 keymap("n", "<Leader>l>", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>l<", "<cmd>Lspsaga outgoing_calls<CR>")
+
+-- Snip Run
+keymap("n", "<leader>sr", ":SnipRun<CR>")
+keymap("v", "<leader>sr", ":SnipRun<CR>")
+keymap("n", "<leader>sc", ":SnipClose<CR>")
+keymap("n", "<leader>sl", ":SnipLive<CR>")
+keymap("n", "<leader>ss", ":SnipReset<CR>")
