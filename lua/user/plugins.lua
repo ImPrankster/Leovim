@@ -78,13 +78,13 @@ return packer.startup(function(use)
   })
   use "hrsh7th/cmp-nvim-lsp-signature-help"
   use "folke/which-key.nvim"
-  use "karb94/neoscroll.nvim"
   use {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
   }
   use 'NvChad/nvim-colorizer.lua'
   use { 'michaelb/sniprun', run = 'bash ./install.sh' }
+  use { 'mg979/vim-visual-multi' }
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -141,6 +141,7 @@ return packer.startup(function(use)
   use { "shaunsingh/nord.nvim" }
   use { "wuelnerdotexe/vim-enfocado" }
   use { "vv9k/bogster" }
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" }         -- The completion plugin

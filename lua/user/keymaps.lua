@@ -123,6 +123,7 @@ keymap("n", "<leader>lr", "<cmd>Lspsaga rename ++project<CR>")
 -- It also supports tagstack
 -- Use <C-t> to jump back
 keymap("n", "<leader>ll", "<cmd>Lspsaga peek_definition<CR>")
+keymap("n", "<leader>ld", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
@@ -163,5 +164,4 @@ keymap("n", "<Leader>l<", "<cmd>Lspsaga outgoing_calls<CR>")
 keymap("n", "<leader>sr", ":SnipRun<CR>")
 keymap("v", "<leader>sr", ":SnipRun<CR>")
 keymap("n", "<leader>sc", ":SnipClose<CR>")
-keymap("n", "<leader>sl", ":SnipLive<CR>")
 keymap("n", "<leader>ss", ":SnipReset<CR>")
